@@ -34,4 +34,10 @@ public class ReviewBO {
 	public int updateReviewById(int id, String review) {
 		return reviewMapper.updateReviewById(id, review);
 	}
+	
+	// input: int
+	// output: x
+	public void deleteReviewById(int id) {
+		reviewMapper.deleteReviewById(id);
+	}
 }
