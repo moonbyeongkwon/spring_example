@@ -7,12 +7,9 @@ import com.example.lesson04.domain.User;
 
 @Mapper
 public interface UserMapper {
-	
-	public void addUser(
-			@Param("name") String name, 
-			@Param("yyyymmdd") String yyyymmdd, 
-			@Param("email") String email, 
+
+	public int insertUser(@Param("name") String name, @Param("yyyymmdd") String yyyymmdd, @Param("email") String email,
 			@Param("introduce") String introduce);
-	
+
 	public User selectLatestUser();
 }

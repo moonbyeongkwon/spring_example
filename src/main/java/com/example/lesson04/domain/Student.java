@@ -2,68 +2,56 @@ package com.example.lesson04.domain;
 
 import java.util.Date;
 
-public class User {
+public class Student {
 	private int id;
 	private String name;
-	private String yyyymmdd;
+	private String phoneNumber;
 	private String email;
-	private String introduce;
-	private Date createdAt;
+	private String dreamJob;
 	private Date updatedAt;
-
+	private Date createdAt;
+	
+	
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getYyyymmdd() {
-		return yyyymmdd;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
-
-	public void setYyyymmdd(String yyyymmdd) {
-		this.yyyymmdd = yyyymmdd;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
-
 	public String getEmail() {
 		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public String getIntroduce() {
-		return introduce;
+	public String getDreamJob() {
+		return dreamJob;
 	}
-
-	public void setIntroduce(String introduce) {
-		this.introduce = introduce;
+	public void setDreamJob(String dreamJob) {
+		this.dreamJob = dreamJob;
 	}
-
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
-
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
+	}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
 	}
 }
