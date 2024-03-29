@@ -3,14 +3,13 @@ package com.example.lesson04.domain;
 import java.util.Date;
 
 public class Student {
-	private int id;
+	private int id; 
 	private String name;
 	private String phoneNumber;
 	private String email;
 	private String dreamJob;
+	private Date createdAt; 
 	private Date updatedAt;
-	private Date createdAt;
-	
 	
 	public int getId() {
 		return id;
@@ -42,16 +41,16 @@ public class Student {
 	public void setDreamJob(String dreamJob) {
 		this.dreamJob = dreamJob;
 	}
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
 	public Date getCreatedAt() {
 		return createdAt;
 	}
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
+	}
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
 	}
 }
