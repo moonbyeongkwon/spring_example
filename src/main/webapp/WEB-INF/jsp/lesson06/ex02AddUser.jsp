@@ -29,15 +29,54 @@
 		$(document).ready(function() {
 			// 중복확인 버튼 클릭
 			$("#nameCheckBtn").on('click', function() {
+				// nameStatusArea 하위 태그들 초기화
+				$("#nameStatusArea").empty(); // 자식 태그들을 모두 비운다.
+				
 				//alert("중복확인");
 				let name = $("#name").val().trim();
 				
 				// validation
 				if (!name) {
-					alert("이름을 입력하세요");
+					$("#nameStatusArea").append('<span class="text-danger">이름이 비어있습니다.</span>');
 					return;
 				}
+				
+				// AJAX - 이름 중복 확인 DB에서
+				$.ajax({
+					// request
+					type:"GET" // get일 때 생략 가능
+					, url:"/lesson06/ex02/is-duplication-name"
+					, data:{"name":name}
+					
+					// response
+					, success:function(data) { // string->parsing=>dictionary
+						// {"code":200, "is_duplication":true}
+						// 중복일 때 문구 노출
+						if (data.is_duplication) {
+							$("#nameStatusArea").append('<span class="text-danger">중복된 이름입니다.</span>');
+						}
+					}
+					, error:function(error) {
+						alert("이름 중복확인에 실패했습니다.");
+					}
+				});
 			});
+			
+			// 회원가입
+			$("#joinBtn").on('click', function() {
+				//alert("회원가입");
+				
+				// nameStatusArea에 자식태그가 아무것도 없다면 가입
+				console.log($("#nameStatusArea").children());
+				
+				if ($("#nameStatusArea").children().length < 1) {
+					alert("회원가입 진행");
+				} else {
+					alert("회원가입 불가");
+				}
+				
+			})
+			
 		});
 	</script>
 </body>
