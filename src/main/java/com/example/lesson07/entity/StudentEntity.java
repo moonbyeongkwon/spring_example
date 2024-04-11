@@ -20,7 +20,7 @@ import lombok.ToString;
 @AllArgsConstructor // 모든 파라미터가 있는 생성자
 @NoArgsConstructor // 파라미터 없는 생성자
 @Getter
-@Builder // setter의 대용
+@Builder(toBuilder = true) // setter의 대용, toBuilder=true 필드 수정 허용
 @Entity // 이 객체는 entity이다. DB-JPA 통신 사이
 @Table(name = "new_student")
 public class StudentEntity {
